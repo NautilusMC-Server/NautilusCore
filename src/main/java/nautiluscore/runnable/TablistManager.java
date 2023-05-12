@@ -35,7 +35,7 @@ public class TablistManager {
                     // changes nametag for afk etc.
                     if(plugin.getAfkManager().isAfk(p)) {
                         name = ChatColor.GRAY + name;
-                        afk = ChatColor.GRAY + "[AFK] ";
+                        afk = ChatColor.GRAY + "AFK ";
                     }
 
                     if(isPlayerInGroup(p, "owner")) {
