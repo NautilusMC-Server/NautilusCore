@@ -1,0 +1,16 @@
+nautiluscore\util\Text.class
+nautiluscore\commands\AfkCommand.class
+nautiluscore\runnable\TablistManager.class
+nautiluscore\runnable\SleepManager$SleepRunnable$1.class
+nautiluscore\EventManager.class
+nautiluscore\runnable\SleepManager.class
+nautiluscore\runnable\AFKManager$1.class
+nautiluscore\runnable\SleepManager$1.class
+nautiluscore\runnable\SleepManager$SleepRunnable.class
+nautiluscore\runnable\TablistManager$1.class
+nautiluscore\DataManager.class
+nautiluscore\runnable\SleepManager$2.class
+nautiluscore\NautilusCore.class
+nautiluscore\runnable\AFKManager.class
+nautiluscore\commands\CommandStem.class
+nautiluscore\commands\ColorsCommand.class

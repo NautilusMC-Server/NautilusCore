@@ -1,0 +1,11 @@
+name: NautilusCore
+version: ${project.version}
+main: nautiluscore.NautilusCore
+api-version: 1.14
+authors: [longbread]
+description: Core plugin for generic NautilusMC server functions
+commands:
+  afk:
+    description: toggles afk status
+  colors:
+    description: displays information about colors and formatting
