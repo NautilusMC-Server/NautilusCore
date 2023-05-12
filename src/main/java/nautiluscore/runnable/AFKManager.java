@@ -11,17 +11,19 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class AFKManager implements Listener {
 
     private NautilusCore plugin;
-    private HashMap<Player, Location> afk; //player afk, where they were when they went afk
-    private HashMap<Player, Location> all; //player, location (continuous)
+    private ArrayList<UUID> afk; //player afk
+    private HashMap<UUID, Location> all; //player, location (continuous)
 
     public AFKManager(NautilusCore plugin) {
         this.plugin = plugin;
-        this.afk = new HashMap<>();
+        this.afk = new ArrayList<>();
         this.all = new HashMap<>();
     }
 
@@ -33,11 +35,17 @@ public class AFKManager implements Listener {
 
                 for(Player p : Bukkit.getOnlinePlayers()) {
 
-                    if(all.get(p).distance(p.getLocation()) < 5) {
+                    if(!all.containsKey(p.getUniqueId())) {
+                        all.put(p.getUniqueId(), p.getLocation());
+                        continue;
+                    }
+
+                    if(all.get(p.getUniqueId()).distance(p.getLocation()) < 3 &&
+                        all.get(p.getUniqueId()).getDirection().equals(p.getLocation().getDirection())) {
                         setAfk(p);
                     }
 
-                    all.put(p, p.getLocation());
+                    all.put(p.getUniqueId(), p.getLocation());
 
                 }
             }
@@ -46,12 +54,12 @@ public class AFKManager implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
-        all.put(e.getPlayer(), e.getPlayer().getLocation());
+        all.put(e.getPlayer().getUniqueId(), e.getPlayer().getLocation());
     }
 
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
-        all.remove(e.getPlayer());
+        all.remove(e.getPlayer().getUniqueId());
     }
 
     @EventHandler
@@ -64,17 +72,17 @@ public class AFKManager implements Listener {
     public void setAfk(Player p) {
         p.sendMessage(Text.c("&7You are now AFK."));
         //todo implement command
-        afk.put(p, p.getLocation());
+        afk.add(p.getUniqueId());
     }
 
     public void setNotAfk(Player p) {
         if(!isAfk(p)) return;
         p.sendMessage(Text.c("&7You are no longer AFK."));
-        afk.remove(p);
+        afk.remove(p.getUniqueId());
     }
 
     public boolean isAfk(Player p) {
-        return afk.containsKey(p);
+        return afk.contains(p.getUniqueId());
     }
 
 }

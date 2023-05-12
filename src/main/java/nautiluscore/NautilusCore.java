@@ -3,6 +3,7 @@ package nautiluscore;
 import nautiluscore.commands.AfkCommand;
 import nautiluscore.commands.ColorsCommand;
 import nautiluscore.commands.CommandStem;
+import nautiluscore.commands.InventoryCommand;
 import nautiluscore.runnable.AFKManager;
 import nautiluscore.runnable.SleepManager;
 import nautiluscore.runnable.TablistManager;
@@ -72,6 +73,7 @@ public final class NautilusCore extends JavaPlugin {
     protected void registerCommands() {
         commands.add(new AfkCommand(this));
         commands.add(new ColorsCommand(this));
+        commands.add(new InventoryCommand(this));
     }
 
     public DataManager d() {

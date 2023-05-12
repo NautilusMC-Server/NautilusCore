@@ -5,6 +5,7 @@ nautiluscore\runnable\TablistManager.class
 nautiluscore\runnable\SleepManager$SleepRunnable$1.class
 nautiluscore\EventManager.class
 nautiluscore\runnable\SleepManager.class
+nautiluscore\commands\InventoryCommand.class
 nautiluscore\runnable\AFKManager$1.class
 nautiluscore\runnable\SleepManager$1.class
 nautiluscore\runnable\SleepManager$SleepRunnable.class

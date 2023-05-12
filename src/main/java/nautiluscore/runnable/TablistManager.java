@@ -29,7 +29,7 @@ public class TablistManager {
             public void run() {
                 for(Player p : Bukkit.getOnlinePlayers()) {
 
-                    String name = getTextContent(p.displayName()) + " ";
+                    String name = p.getDisplayName() + " ";
                     String realName = "";
                     if(!getTextContent(p.displayName()).equals(p.getName())) {
                         realName = Text.c("&7(" + p.getName() + ") ");
@@ -44,7 +44,7 @@ public class TablistManager {
                         afk = ChatColor.GRAY + "AFK ";
                     }
 
-                    if(isPlayerInGroup(p, "owner")) {
+                    /*if(isPlayerInGroup(p, "owner")) {
                         name = ChatColor.of(new Color(252, 153, 145)) + name;
                     } else if (isPlayerInGroup(p, "staff")) {
                         name = ChatColor.of(new Color(252, 183, 92)) + name;
@@ -55,6 +55,7 @@ public class TablistManager {
                     } else {
                         name = ChatColor.of(new Color(185, 200, 200)) + name;
                     }
+                     */
 
                     // obscure public health if invisible
                     if(p.hasPotionEffect(PotionEffectType.INVISIBILITY)) { h = "20"; }
