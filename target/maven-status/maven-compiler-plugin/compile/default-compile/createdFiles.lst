@@ -1,4 +1,5 @@
 nautiluscore\util\Text.class
+nautiluscore\EventManager$1.class
 nautiluscore\commands\AfkCommand.class
 nautiluscore\runnable\TablistManager.class
 nautiluscore\runnable\SleepManager$SleepRunnable$1.class

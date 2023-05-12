@@ -1,6 +1,8 @@
 package nautiluscore.runnable;
 
 import nautiluscore.NautilusCore;
+import nautiluscore.util.Text;
+import net.kyori.adventure.text.Component;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -27,7 +29,11 @@ public class TablistManager {
             public void run() {
                 for(Player p : Bukkit.getOnlinePlayers()) {
 
-                    String name = p.getDisplayName() + " ";
+                    String name = getTextContent(p.displayName()) + " ";
+                    String realName = "";
+                    if(!getTextContent(p.displayName()).equals(p.getName())) {
+                        realName = Text.c("&7(" + p.getName() + ") ");
+                    }
                     String h = String.valueOf(Math.round(p.getHealth()));
                     double health = p.getHealth();
                     String afk = "";
@@ -39,13 +45,15 @@ public class TablistManager {
                     }
 
                     if(isPlayerInGroup(p, "owner")) {
-                        name = ChatColor.of(new Color(252, 153, 145)) + p.getDisplayName() + " ";
+                        name = ChatColor.of(new Color(252, 153, 145)) + name;
                     } else if (isPlayerInGroup(p, "staff")) {
-                        name = ChatColor.of(new Color(252, 183, 92)) + p.getDisplayName() + " ";
+                        name = ChatColor.of(new Color(252, 183, 92)) + name;
                     } else if (isPlayerInGroup(p, "youtube")) {
-                        name = ChatColor.RED + "{TW} " + ChatColor.of(new Color(130, 252, 130)) + p.getDisplayName() + " ";
+                        name = ChatColor.RED + "{TW} " + ChatColor.of(new Color(130, 252, 130)) + name;
                     } else if (isPlayerInGroup(p, "sponsor")) {
-                        name = ChatColor.of(new Color(144, 231, 252)) + p.getDisplayName() + " ";
+                        name = ChatColor.of(new Color(144, 231, 252)) + name;
+                    } else {
+                        name = ChatColor.of(new Color(185, 200, 200)) + name;
                     }
 
                     // obscure public health if invisible
@@ -79,7 +87,7 @@ public class TablistManager {
                     map.put(p.getUniqueId(), health);
 
                     // changes tab list display
-                    p.setPlayerListName(afk + name + healthvalue + healthheart);
+                    p.setPlayerListName(afk + name + realName + healthvalue + healthheart);
                 }
             }
         }, 0, 20);
@@ -87,6 +95,15 @@ public class TablistManager {
 
     public static boolean isPlayerInGroup(Player player, String group) {
         return player.hasPermission("group." + group);
+    }
+
+    public static String getTextContent(net.kyori.adventure.text.Component component) {
+        String out = "";
+
+        if (component instanceof net.kyori.adventure.text.TextComponent text) out += text.content();
+        for (Component child : component.children()) out += getTextContent(child);
+
+        return out;
     }
 
 }

@@ -21,6 +21,7 @@ public class AfkCommand extends CommandStem {
                     return true;
                 }
                 sender.sendMessage("There is no player with that name online.");
+                return true;
             }
             sender.sendMessage("You must be a player to execute this command.");
             return true;
