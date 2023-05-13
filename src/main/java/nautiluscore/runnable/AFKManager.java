@@ -70,6 +70,7 @@ public class AFKManager implements Listener {
     }
 
     public void setAfk(Player p) {
+        if(isAfk(p)) return;
         p.sendMessage(Text.c("&7You are now AFK."));
         //todo implement command
         afk.add(p.getUniqueId());
