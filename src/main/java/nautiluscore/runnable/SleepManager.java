@@ -120,11 +120,7 @@ public class SleepManager implements Listener {
                 return;
             }
 
-            int goal;
-            if (players < 10)
-                goal = (int) (players * .5D + .5);
-            else
-                goal = (int) (players * .4D + .5);
+            int goal = (int) (players * plugin.d().getSleepRatio() + .5);
 
             for (Player p : sleeping) {
                 p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(net.md_5.bungee.api.ChatColor.translateAlternateColorCodes('&',

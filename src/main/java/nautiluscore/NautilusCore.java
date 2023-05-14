@@ -1,9 +1,8 @@
 package nautiluscore;
 
-import nautiluscore.commands.AfkCommand;
-import nautiluscore.commands.ColorsCommand;
-import nautiluscore.commands.CommandStem;
-import nautiluscore.commands.InventoryCommand;
+import nautiluscore.commands.*;
+import nautiluscore.data.DataAccessor;
+import nautiluscore.data.DataManager;
 import nautiluscore.runnable.AFKManager;
 import nautiluscore.runnable.SleepManager;
 import nautiluscore.runnable.TablistManager;
@@ -19,6 +18,7 @@ public final class NautilusCore extends JavaPlugin {
 
     protected String pluginName;
     protected DataManager dataManager;
+    protected DataAccessor dataAccessor;
     private EventManager eventManager;
     private TablistManager tablistManager;
     private AFKManager afkManager;
@@ -35,6 +35,7 @@ public final class NautilusCore extends JavaPlugin {
     public void onEnable() {
         //data
         dataManager = new DataManager(this);
+        dataAccessor = new DataAccessor(this);
 
         //runnable
         this.tablistManager = new TablistManager(this);
@@ -73,11 +74,15 @@ public final class NautilusCore extends JavaPlugin {
     protected void registerCommands() {
         commands.add(new AfkCommand(this));
         commands.add(new ColorsCommand(this));
-        commands.add(new InventoryCommand(this));
+        commands.add(new ConfigCommand(this));
     }
 
-    public DataManager d() {
+    public DataManager getDataManager() {
         return dataManager;
+    }
+
+    public DataAccessor d() {
+        return dataAccessor;
     }
 
     public AFKManager getAfkManager() {

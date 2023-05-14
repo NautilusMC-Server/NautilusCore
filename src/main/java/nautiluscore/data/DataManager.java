@@ -1,5 +1,6 @@
-package nautiluscore;
+package nautiluscore.data;
 
+import nautiluscore.NautilusCore;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

@@ -1,0 +1,6 @@
+config:
+  secondsToAfk: 180
+  sleepRatio: 0.5
+  runTablist: true
+users:
+  default: {}

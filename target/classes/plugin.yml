@@ -11,3 +11,5 @@ commands:
     description: displays information about colors and formatting
   inventory:
     description: opens any player's inventory
+  nconfig:
+    description: configures configurable things

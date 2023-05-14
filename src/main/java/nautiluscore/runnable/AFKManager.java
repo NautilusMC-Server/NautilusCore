@@ -29,7 +29,7 @@ public class AFKManager implements Listener {
 
     public void afk() {
 
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 
             public void run() {
 
@@ -48,8 +48,10 @@ public class AFKManager implements Listener {
                     all.put(p.getUniqueId(), p.getLocation());
 
                 }
+
+                plugin.getAfkManager().afk();
             }
-        }, 20, 3600); //every 3 minutes todo config
+        }, plugin.d().getSecondsToAfk() * 20L);
     }
 
     @EventHandler
@@ -72,6 +74,10 @@ public class AFKManager implements Listener {
     public void setAfk(Player p) {
         if(isAfk(p)) return;
         p.sendMessage(Text.c("&7You are now AFK."));
+        for(Player o : Bukkit.getOnlinePlayers()) {
+            if(o.equals(p)) continue;
+            o.sendMessage(Text.c("* &7" + p.getName() + " is now AFK."));
+        }
         //todo implement command
         afk.add(p.getUniqueId());
     }
@@ -79,6 +85,10 @@ public class AFKManager implements Listener {
     public void setNotAfk(Player p) {
         if(!isAfk(p)) return;
         p.sendMessage(Text.c("&7You are no longer AFK."));
+        for(Player o : Bukkit.getOnlinePlayers()) {
+            if(o.equals(p)) continue;
+            o.sendMessage(Text.c("&7* " + p.getName() + " is no longer AFK."));
+        }
         afk.remove(p.getUniqueId());
     }
 

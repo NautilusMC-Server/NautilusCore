@@ -9,5 +9,5 @@ commands:
     description: toggles afk status
   colors:
     description: displays information about colors and formatting
-  inventory:
-    description: opens any player's inventory
+  nconfig:
+    description: configures configurable things
