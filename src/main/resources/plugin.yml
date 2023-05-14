@@ -11,3 +11,7 @@ commands:
     description: displays information about colors and formatting
   nconfig:
     description: configures configurable things
+  heal:
+    description: heal players
+  whois:
+    description: see player info

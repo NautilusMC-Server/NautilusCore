@@ -28,7 +28,10 @@ public class TablistManager {
 
             public void run() {
                 for(Player p : Bukkit.getOnlinePlayers()) {
-                    if(!plugin.d().getRunTablist()) break;
+                    if(!plugin.d().getRunTablist()) {
+                        p.setPlayerListName(p.getName());
+                        break;
+                    }
 
                     String name = p.getDisplayName() + " ";
                     String realName = "";

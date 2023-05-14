@@ -75,6 +75,8 @@ public final class NautilusCore extends JavaPlugin {
         commands.add(new AfkCommand(this));
         commands.add(new ColorsCommand(this));
         commands.add(new ConfigCommand(this));
+        commands.add(new HealCommand(this));
+        commands.add(new WhoIsCommand(this));
     }
 
     public DataManager getDataManager() {

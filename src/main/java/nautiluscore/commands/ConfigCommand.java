@@ -38,6 +38,8 @@ public class ConfigCommand extends CommandStem {
         try {
             if (prev instanceof Boolean) {
                 cfg.set(args[0], Boolean.parseBoolean(args[1]));
+            } else if(prev instanceof Double) {
+                cfg.set(args[0], Double.parseDouble(args[1]));
             } else {
                 cfg.set(args[0], Integer.parseInt(args[1]));
             }

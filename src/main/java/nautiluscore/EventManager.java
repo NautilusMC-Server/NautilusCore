@@ -6,6 +6,7 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.PrepareAnvilEvent;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -34,6 +35,15 @@ public class EventManager implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
         plugin.d().setLastLocation(e.getPlayer());
+    }
+
+    @EventHandler
+    public void onAnvil(PrepareAnvilEvent e) {
+        //for renaming
+        if(e.getInventory().getFirstItem() != null &&
+            e.getInventory().getSecondItem() == null) {
+            e.getInventory().setRepairCost(0);
+        }
     }
 
     @EventHandler
