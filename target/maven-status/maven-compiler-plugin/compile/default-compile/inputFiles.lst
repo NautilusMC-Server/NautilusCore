@@ -1,10 +1,14 @@
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\commands\CommandStem.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\EventManager.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\commands\AfkCommand.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\runnable\AFKManager.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\DataManager.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\commands\ColorsCommand.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\runnable\SleepManager.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\runnable\TablistManager.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\NautilusCore.java
-C:\Users\Asa Shepard\IdeaProjects\NautilusCore\src\main\java\nautiluscore\util\Text.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\runnable\TablistManager.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\commands\AfkCommand.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\commands\ConfigCommand.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\commands\HealCommand.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\data\DataManager.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\NautilusCore.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\data\DataAccessor.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\commands\CommandStem.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\commands\WhoIsCommand.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\EventManager.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\util\Text.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\runnable\SleepManager.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\commands\ColorsCommand.java
+C:\Users\Malcolm\Documents\IntelliJ Idea\Minecraft Modding\Nautilus\NautilusCore\src\main\java\nautiluscore\runnable\AFKManager.java

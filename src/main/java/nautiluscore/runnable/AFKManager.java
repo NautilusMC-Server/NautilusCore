@@ -51,7 +51,7 @@ public class AFKManager implements Listener {
 
                 plugin.getAfkManager().afk();
             }
-        }, plugin.d().getSecondsToAfk() * 20L);
+        }, plugin.d().getConfig().getInt("secondsToAfk") * 20L);
     }
 
     @EventHandler

@@ -5,6 +5,7 @@ import nautiluscore.util.Text;
 import net.kyori.adventure.text.Component;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
 
@@ -28,7 +29,7 @@ public class TablistManager {
 
             public void run() {
                 for(Player p : Bukkit.getOnlinePlayers()) {
-                    if(!plugin.d().getRunTablist()) {
+                    if(!plugin.d().getConfig().getBoolean("runTablist")) {
                         p.setPlayerListName(p.getName());
                         break;
                     }
@@ -48,19 +49,6 @@ public class TablistManager {
                         afk = ChatColor.GRAY + "AFK ";
                     }
 
-                    /*if(isPlayerInGroup(p, "owner")) {
-                        name = ChatColor.of(new Color(252, 153, 145)) + name;
-                    } else if (isPlayerInGroup(p, "staff")) {
-                        name = ChatColor.of(new Color(252, 183, 92)) + name;
-                    } else if (isPlayerInGroup(p, "youtube")) {
-                        name = ChatColor.RED + "{TW} " + ChatColor.of(new Color(130, 252, 130)) + name;
-                    } else if (isPlayerInGroup(p, "sponsor")) {
-                        name = ChatColor.of(new Color(144, 231, 252)) + name;
-                    } else {
-                        name = ChatColor.of(new Color(185, 200, 200)) + name;
-                    }
-                     */
-
                     // obscure public health if invisible
                     if(p.hasPotionEffect(PotionEffectType.INVISIBILITY)) { h = "20"; }
 
@@ -79,6 +67,10 @@ public class TablistManager {
                     else if (p.isFrozen()) {
                         healthvalue = ChatColor.AQUA + h;
                         healthheart = ChatColor.DARK_AQUA + "♥";
+                    }
+
+                    if (p.getGameMode() == GameMode.CREATIVE || p.getGameMode() == GameMode.SPECTATOR) {
+                        healthvalue = healthheart = "";
                     }
 
                     // makes health display flash if damage taken

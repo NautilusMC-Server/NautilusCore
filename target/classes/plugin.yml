@@ -1,5 +1,5 @@
 name: NautilusCore
-version: ${project.version}
+version: 1.0-SNAPSHOT
 main: nautiluscore.NautilusCore
 api-version: 1.14
 authors: [longbread]

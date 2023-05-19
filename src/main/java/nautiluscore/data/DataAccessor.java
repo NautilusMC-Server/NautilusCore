@@ -39,19 +39,8 @@ public class DataAccessor {
 
     //getters for .d().* calls
     //config
-    public int getSecondsToAfk() {
-        ConfigurationSection cfg = plugin.getDataManager().getConfig().getConfigurationSection("config");
-        return cfg.getInt("secondsToAfk");
-    }
-
-    public double getSleepRatio() {
-        ConfigurationSection cfg = plugin.getDataManager().getConfig().getConfigurationSection("config");
-        return cfg.getDouble("sleepRatio");
-    }
-
-    public boolean getRunTablist() {
-        ConfigurationSection cfg = plugin.getDataManager().getConfig().getConfigurationSection("config");
-        return cfg.getBoolean("runTablist");
+    public ConfigurationSection getConfig() {
+        return plugin.getDataManager().getConfig().getConfigurationSection("config");
     }
 
     //users
