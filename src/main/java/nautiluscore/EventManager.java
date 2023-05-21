@@ -61,6 +61,7 @@ public class EventManager implements Listener {
 
     @EventHandler
     public void onPlayerMessage(PlayerChatEvent e) {
+        if(plugin.getAfkManager().isAfk(e.getPlayer())) plugin.getAfkManager().setNotAfk(e.getPlayer());
         for(Player p : Bukkit.getOnlinePlayers()) {
             if(e.getMessage().toLowerCase().contains(p.displayName().toString().toLowerCase()) ||
                     e.getMessage().toLowerCase().contains(p.getName().toLowerCase())) {
@@ -73,6 +74,11 @@ public class EventManager implements Listener {
                 }, 2);
             }
         }
+    }
+
+    @EventHandler
+    public void onPlayerCommand(PlayerCommandSendEvent e) {
+        if(plugin.getAfkManager().isAfk(e.getPlayer())) plugin.getAfkManager().setNotAfk(e.getPlayer());
     }
 
 //    private static final EntityDataAccessor<Integer> ITEM_SLOT = SynchedEntityData.defineId(ItemEntity.class, EntityDataSerializers.INT);

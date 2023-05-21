@@ -36,9 +36,9 @@ public class TablistManager {
 
                     String name = p.getDisplayName() + " ";
                     String realName = "";
-                    if(!getTextContent(p.displayName()).equals(p.getName())) {
+                    /*if(!getTextContent(p.displayName()).equals(p.getName())) {
                         realName = Text.c("&7(" + p.getName() + ") ");
-                    }
+                    }*/
                     String h = String.valueOf(Math.round(p.getHealth()));
                     double health = p.getHealth();
                     String afk = "";

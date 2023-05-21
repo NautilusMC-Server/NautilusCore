@@ -76,7 +76,7 @@ public class AFKManager implements Listener {
         p.sendMessage(Text.c("&7You are now AFK."));
         for(Player o : Bukkit.getOnlinePlayers()) {
             if(o.equals(p)) continue;
-            o.sendMessage(Text.c("* &7" + p.getName() + " is now AFK."));
+            o.sendMessage(Text.c("&7* " + p.getName() + " is now AFK."));
         }
         //todo implement command
         afk.add(p.getUniqueId());
