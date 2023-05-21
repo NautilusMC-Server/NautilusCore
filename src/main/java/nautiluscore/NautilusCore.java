@@ -20,6 +20,7 @@ public final class NautilusCore extends JavaPlugin {
     protected DataManager dataManager;
     protected DataAccessor dataAccessor;
     private EventManager eventManager;
+    private ProtectionManager protectionManager;
     private TablistManager tablistManager;
     private AFKManager afkManager;
     private SleepManager sleepManager;
@@ -48,6 +49,7 @@ public final class NautilusCore extends JavaPlugin {
 
         //events
         this.eventManager = new EventManager(this);
+        this.protectionManager = new ProtectionManager(this);
         registerEvents();
 
         //commands
@@ -66,8 +68,9 @@ public final class NautilusCore extends JavaPlugin {
     }
 
     protected void registerEvents() {
-        PluginManager pm = Bukkit.getServer().getPluginManager();
+        PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(eventManager, this);
+        pm.registerEvents(protectionManager, this);
         pm.registerEvents(afkManager, this);
     }
 

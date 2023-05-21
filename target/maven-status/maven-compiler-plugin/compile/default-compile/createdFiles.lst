@@ -18,4 +18,5 @@ nautiluscore\NautilusCore.class
 nautiluscore\runnable\AFKManager.class
 nautiluscore\commands\CommandStem.class
 nautiluscore\data\DataManager.class
+nautiluscore\ProtectionManager.class
 nautiluscore\commands\ColorsCommand.class
